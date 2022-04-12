@@ -20,7 +20,7 @@ Check out the Heroku site - TBD
 
 - JavaScript
 - Express.js
-- Heroku 00
+- Heroku
 
 ---
 
