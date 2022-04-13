@@ -10,6 +10,11 @@ const { type } = require("express/lib/response");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+// Middleware that will provide a path to a location in our application
+// In this case, the public folder, and instruct the server to make these files resources
+// This means that all of our front-end code can now be accessed without having a specific
+// endpoint created for it!
+app.use(express.static("public"));
 // Parse incoming string or array data
 app.use(express.urlencoded({ extended: true }));
 
@@ -130,6 +135,27 @@ app.post("/api/animals", (req, res) => {
     // req.body is where our incoming content will be
     res.json(animal);
   }
+});
+
+// Gets landing page/homepage
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "./public/index.html"));
+});
+
+// Gets animals page
+app.get("/animals", (req, res) => {
+  res.sendFile(path.join(__dirname, "./public/animals.html"));
+});
+
+// Gets zookeepers page
+app.get("/zookeepers", (req, res) => {
+  res.sendFile(path.join(__dirname, "/public/zookeepers.html"));
+});
+
+// Wildcard Route - this is if a client makes a request for a response that doesn't exist.
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 
 app.listen(PORT, () => {
