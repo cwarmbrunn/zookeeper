@@ -12,13 +12,15 @@ Creating a site that will allow animal enthusiasts to access animal data from di
 
 **Live Site:**
 
-Check out the Heroku site - TBD 
+Check out the Heroku site - https://cryptic-basin-86396.herokuapp.com
 
 ---
 
 **Technology Used:**
 
 - JavaScript
+- HTML
+- CSS
 - Express.js
 - Heroku
 
@@ -26,9 +28,7 @@ Check out the Heroku site - TBD
 
 **Installation:**
 
-
 ---
 
 **Screenshot:**
-![]()
-
+![A screenshot of the Zoo Keepr site](./public/assets/images/zookeeper-site.jpg)
